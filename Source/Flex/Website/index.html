@@ -1,0 +1,370 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="htmlcss bootstrap aside menu, vertical, sidebar nav menu CSS examples" />
+    <meta name="description" content="Bootstrap 5 sidebar navigation menu example" />
+    <link rel="icon" href="./Logo1_White_Blur.png" type="image/x-icon">
+    <title>Sherlock Log Viewer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+    <!-- ======= Icons used for dropdown (you can use your own) ======== -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+
+    <style type="text/css">
+
+        .sidebar li .submenu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .sidebar .nav-link {
+            font-weight: 500;
+            color: var(--bs-dark);
+        }
+
+            .sidebar .nav-link:hover {
+                color: var(--bs-primary);
+            }
+
+        .jumbotron {
+            margin-bottom: 0;
+            overflow: visible;
+            position: relative;
+            z-index: 1;
+            background-color: #2c2c32;
+            padding: 0;
+            padding: 2rem 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .TextHeading {
+            font-family: "Segoe UI","Helvetica Neue","Helvetica",Arial,sans-serif;
+            font-weight: 100;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .TextLicense {
+            font-family: "Segoe UI","Helvetica Neue","Helvetica",Arial,sans-serif;
+            color: #ffffff99
+        }
+
+        .TextBlack {
+            font-family: "Segoe UI","Helvetica Neue","Helvetica",Arial,sans-serif;
+            color: #ffffff;
+            background-color: #2c2c32;
+        }
+
+        .TextWhite {
+            font-family: "Segoe UI","Helvetica Neue","Helvetica",Arial,sans-serif;
+        }
+    </style>
+
+
+    <script type="text/javascript">
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            document.querySelectorAll('.sidebar .nav-link').forEach(function (element) {
+
+                element.addEventListener('click', function (e) {
+
+                    let nextEl = element.nextElementSibling;
+                    let parentEl = element.parentElement;
+
+                    if (nextEl) {
+                        e.preventDefault();
+                        let mycollapse = new bootstrap.Collapse(nextEl);
+
+                        if (nextEl.classList.contains('show')) {
+                            mycollapse.hide();
+                        } else {
+                            mycollapse.show();
+                            // find other submenus with class=show
+                            var opened_submenu = parentEl.parentElement.querySelector('.submenu.show');
+                            // if it exists, then close all of them
+                            if (opened_submenu) {
+                                new bootstrap.Collapse(opened_submenu);
+                            }
+
+                        }
+                    }
+
+                });
+            })
+
+        });
+        // DOMContentLoaded  end
+    </script>
+
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <div class="container-fluid">
+            <div class="col-md-2"></div>
+
+            <a class="navbar-brand" href="#">
+                <img src="./Logo1_White_Blur.png" alt="Logo" class="img-fluid d-sm-none" style="max-width: 40px;">
+                <img src="./Logo1_White_Blur.png" alt="Logo" class="img-fluid d-none d-sm-block" style="max-width: 40px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html"><h5 style="color:#ffffff">Sherlock Log Viewer</h5></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Docs.html"><p3>Documentation</p3></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </nav>
+</head>
+<body class="bg-light">
+    <div>
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-2"></div>
+
+                <div class="col-md-2" align="center">
+                    <br><br>
+                    <h1 class="TextHeading">Investigation & Analysis.<br /><strong>Redifined.</strong></h1>
+                    <a href="./Sherlock Log Viewer Setup 1.2.0.exe" style="text-decoration:none" download="./Sherlock Log Viewer Setup 1.2.0.exe">
+                        <button class="btn btn-primary" type="button">Download</button>
+                    </a>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary dropdown-toggle " data-bs-toggle="dropdown"></button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="./Sherlock Log Viewer Setup 1.2.0.exe">Download for windows</a>
+                            <a class="dropdown-item" href="./SherlockLogViewer.zip">Download for linux</a>
+                        </div>
+                    </div>
+                    <br>
+                    <p class="TextLicense">By using Sherlock Log Viewer you agree to its licensing and privacy statement</p>
+                </div>
+                <div class="col-md-6" align="center">
+                    <br><br>
+
+                    <!-- Carousel -->
+                    <div id="demo" class="carousel slide " data-bs-ride="carousel" style="box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);">
+
+                        <!-- Indicators/dots -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+                            <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+                            <button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
+                        </div>
+
+                        <!-- The slideshow/carousel -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="./customparser.png" alt="Los Angeles" class="d-block" style="width:100%">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./parserconfig.png" alt="Chicago" class="d-block" style="width:100%">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./filter.png" alt="New York" class="d-block" style="width:100%">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./darktheme.png" alt="New York" class="d-block" style="width:100%">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./find.png" alt="New York" class="d-block" style="width:100%">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./printing.png" alt="New York" class="d-block" style="width:100%">
+                            </div>
+                        </div>
+
+                        <!-- Left and right controls/icons -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="container-fluid mt-3" id="Investigation">
+        <div class="row TextWhite">
+            <div class="col-sm-2 p-3 "></div>
+            <div class="col-sm-4 p-3 ">
+                <h2>Investigation</h2>
+                <p>Sherlock has an easy to use investigation feature , where you can add all your investigation be it from your bookmarked logs , filter logs or even from your result generated from find query .Further you can format the entries according to your choice and even print the investigation in any format.</p>
+            </div>
+            <div class="col-sm-4 p-3 ">
+                <img src="./investigation.png" onclick="openModal('./investigation.png')" style="width: 100%; border: 1px solid #ccc; padding: 1px; box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2); cursor: pointer; ">
+            </div>
+            <div class="col-sm-2 p-3 "></div>
+        </div>
+    </div>
+    <div class="container-fluid mt-3" id="Timeline">
+        <div class="row TextBlack">
+            <div class="col-sm-2 p-3 "></div>
+            <div class="col-sm-4 p-3 ">
+                <img src="./timeline.png" onclick="openModal('./timeline.png')" style="width: 100%; border: 1px solid #ccc; padding: 1px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); cursor: pointer; ">
+            </div>
+            <div class="col-sm-4 p-3 ">
+                <h2>Timeline</h2>
+                <p>With our timeline feature you can place your investigation notes in a chronological manner and it will display in a timeline format for your quick glance enabling fast investigation .</p>
+            </div>
+            <div class="col-sm-2 p-3 "></div>
+        </div>
+    </div>
+
+    <div class="container-fluid mt-3" id="Printing">
+        <div class="row TextWhite">
+            <div class="col-sm-2 p-3 "></div>
+            <div class="col-sm-4 p-3 ">
+                <h2>Printing</h2>
+                <p>With our printing feature you can copy all your notes , bookmarks , investigation at a one glance either to your clipboard or can be printed to any format you want. We provide you the facility to highlight the desired information in investigation by quick formatting and even you can attach links or images to the undergoing investigation.</p>
+            </div>
+            <div class="col-sm-4 p-3 ">
+                <img src="./printing.png" onclick="openModal('./printing.png')" style="width: 100%; border: 1px solid #ccc; padding: 1px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); cursor: pointer; ">
+            </div>
+            <div class="col-sm-2 p-3 "></div>
+        </div>
+    </div>
+    <div class="container-fluid mt-3" id="Filtering">
+        <div class="row TextBlack">
+            <div class="col-sm-2 p-3 "></div>
+            <div class="col-sm-4 p-3 ">
+                <img src="./filter.png" onclick="openModal('./filter.png')" style="width: 100%; border: 1px solid #ccc; padding: 1px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); cursor: pointer;">
+            </div>
+            <div class="col-sm-4 p-3 ">
+                <h2>Advanced Filtering</h2>
+                <p>Our intuitive filtering interface allows you to quickly sort through logs for specific investigations. It offers powerful options like similarity, equality, and regex. You can also group multiple columns for advanced filtering.</p>
+            </div>
+            <div class="col-sm-2 p-3 "></div>
+        </div>
+    </div>
+    <div class="container-fluid mt-3" id="Find">
+        <div class="row TextWhite">
+            <div class="col-sm-2 p-3 "></div>
+            <div class="col-sm-4 p-3 ">
+                <h2>Find</h2>
+                <p>
+                    Feature, you can perform accurate searches in your log files using both simple keywords and regular expressions (regex).
+                    This powerful combination allows you to pinpoint specific events, errors, or patterns efficiently.
+                </p>
+            </div>
+            <div class="col-sm-4 p-3 ">
+                <img src="./find.png" onclick="openModal('./find.png')" style="width: 100%; border: 1px solid #ccc; padding: 1px; box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2); cursor: pointer; ">
+            </div>
+            <div class="col-sm-2 p-3 "></div>
+        </div>
+    </div>
+    <div class="container-fluid mt-3" id="Bookmark">
+        <div class="row TextBlack">
+            <div class="col-sm-2 p-3 "></div>
+            <div class="col-sm-4 p-3 ">
+                <img src="./bookmark.png" onclick="openModal('./bookmark.png')" style="width: 100%; border: 1px solid #ccc; padding: 1px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); cursor: pointer; ">
+            </div>
+            <div class="col-sm-4 p-3 ">
+                <h2>Bookmark</h2>
+                <p>You can simplify log analysis and investigation by marking and save crucial reference points within log files. With a simple click, you can create virtual flags that act as signposts for important events, errors, or data entries. These bookmarks enable quick navigation to specific sections of interest, eliminating the need for manual scrolling or time-consuming searches through extensive logs providing seamless collaboration among team members, as bookmarks can be easily shared, aiding in faster troubleshooting and more efficient decision-making.</p>
+            </div>
+            <div class="col-sm-2 p-3 "></div>
+        </div>
+    </div>
+    <div class="container-fluid mt-3" id="Parser">
+        <div class="row TextWhite">
+            <div class="col-sm-2 p-3 "></div>
+            <div class="col-sm-4 p-3 ">
+                <h2>Advanced Parser</h2>
+                <p>Sherlock has an automated log detection and parsing feature. Additionally, it provides a robust parser setup interface to create rules for parsing business-specific logs. The parser can handle both single-line and complex multiline logs.</p>
+            </div>
+            <div class="col-sm-4 p-3 ">
+                <img src="./parserconfig.png" onclick="openModal('./parserconfig.png')" style="width: 100%; border: 1px solid #ccc; padding: 1px; box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2); cursor: pointer;">
+            </div>
+            <div class="col-sm-2 p-3 "></div>
+        </div>
+    </div>
+    <div class="container-fluid mt-3" id="Customization">
+        <div class="row TextBlack">
+            <div class="col-sm-2 p-3 "></div>
+            <div class="col-sm-4 p-3 ">
+                <h2>Log View Customization</h2>
+                <p>You can even customize which column you want to hide or to be pinned in while scrolling through large log files , it provides you the flexibility to rearrange columns for a better view.</p>
+            </div>
+            <div class="col-sm-4 p-3 ">
+                <img src="./customtable.png" onclick="openModal('./customtable.png')" style="width: 100%; border: 1px solid #ccc; padding: 1px; box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2); cursor: pointer; ">
+            </div>
+            <div class="col-sm-2 p-3 "></div>
+        </div>
+    </div>
+    <div class="container-fluid mt-3" id="Printing">
+        <div class="row TextWhite">
+            <div class="col-sm-2 p-3 "></div>
+            <div class="col-sm-4 p-3 ">
+                <img src="./darktheme.png" onclick="openModal('./darktheme.png')" style="width: 100%; border: 1px solid #ccc; padding: 1px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); cursor: pointer; ">
+            </div>
+            <div class="col-sm-4 p-3 ">
+                <h2>Customizeable Theme</h2>
+                <p>Easily toggle between Dark and Light theme for smoother view. </p>
+            </div>
+            <div class="col-sm-2 p-3 "></div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" style="min-width:85%;">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div style="position: relative;">
+                        <img id="modalImage" class="img-fluid" src="" alt="Modal Image">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="position: absolute; top: 10px; right: 10px; cursor: pointer;" data-bs-dismiss="modal">
+                            <path fill="#000000" d="M19,6.41L17.59,5,12,10.59,6.41,5,5,6.41,10.59,12,5,17.59,6.41,19,12,13.41,17.59,19,19,17.59,13.41,12Z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        function openModal(imageSrc) {
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageSrc;
+
+            const myModal = new bootstrap.Modal(document.getElementById('myModal'), {});
+            myModal.show(); // Trigger the modal
+        }
+    </script>
+    <footer class="container-fluid text-center">
+        <p class="focus:outline-none">
+            &copy; 2023 Sherlock Log Viewer. All rights reserved
+        </p>
+
+    </footer>
+</body>
+</html>

@@ -1,0 +1,151 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <SpaRoot>ClientApp\</SpaRoot>
+    <SpaProxyServerUrl>http://localhost:44487</SpaProxyServerUrl>
+    <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Platforms>AnyCPU;x64;x86;ARM64;ARM32</Platforms>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="ElectronNET.API" Version="23.6.1" />
+    <PackageReference Include="Grpc.AspNetCore.Web" Version="2.51.0" />
+    <PackageReference Include="Grpc.Core" Version="2.46.6" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="7.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Content Remove="$(SpaRoot)**" />
+    <None Remove="$(SpaRoot)**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="ClientApp\src\app\column-options\ColumnEvents.ts" />
+    <None Remove="ClientApp\src\app\default-parser\DefaultParserModel.ts" />
+    <None Remove="ClientApp\src\app\filter-view\FilterEvents.ts" />
+    <None Remove="ClientApp\src\app\find-view\FindEvents.ts" />
+    <None Remove="ClientApp\src\app\global-progress-bar\GloblaProgressBarEvents.ts" />
+    <None Remove="ClientApp\src\app\investigation-view\InvestigationEvents.ts" />
+    <None Remove="ClientApp\src\app\parser-setup-view\ParserEvents.ts" />
+    <None Remove="ClientApp\src\app\table-view\TableEvents.ts" />
+    <None Remove="ClientApp\src\app\top-menu\TopMenuEvents.ts" />
+    <None Remove="ClientApp\src\app\user-settings\UserSettingsEvents.ts" />
+    <None Remove="ClientApp\src\common\enums.ts" />
+    <None Remove="ClientApp\src\common\logdefinition.ts" />
+    <None Remove="ClientApp\src\common\loggraph.ts" />
+    <None Remove="ClientApp\src\common\userworkboxdata.ts" />
+    <None Remove="ClientApp\src\interfaces\TableInterfaces.ts" />
+    <None Remove="ClientApp\src\services\constants.ts" />
+    <None Remove="ClientApp\src\services\theme-service.ts.ts" />
+    <None Remove="ClientApp\src\services\tracer.ts" />
+    <None Remove="ClientApp\src\services\uisession.service.ts" />
+    <None Remove="ClientApp\src\utils\fileutils.ts" />
+    <None Remove="ClientApp\src\utils\objectutils.ts" />
+    <None Remove="ClientApp\src\utils\testdataloader.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Flex.LVA.AccessPoint\Flex.LVA.AccessPoint.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ClientApp\src\generated\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\Logo1_White_Blur.png" />
+    <None Include="wwwroot\splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\column-options\ColumnEvents.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\default-parser\DefaultParserModel.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\filter-view\FilterEvents.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\find-view\FindEvents.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\global-progress-bar\GloblaProgressBarEvents.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\investigation-view\InvestigationEvents.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\parser-setup-view\ParserEvents.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\table-view\TableEvents.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\top-menu\TopMenuEvents.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\FacsAndConsts.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\user-settings\UserSettingsEvents.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\common\enums.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\common\userworkboxdata.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\common\logdefinition.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\common\loggraph.ts" />
+    <TypeScriptCompile Include="ClientApp\src\interfaces\TableInterfaces.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\theme-service.ts.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\constants.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\logger.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\uisession.service.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\utils\testdataloader.ts" />
+    <TypeScriptCompile Include="ClientApp\src\utils\objectutils.ts" />
+    <TypeScriptCompile Include="ClientApp\src\utils\fileutils.ts" />
+    <TypeScriptCompile Include="ClientApp\src\utils\tracer.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="ClientApp\src\services\CommonReturnTypes.proto">
+      <ProtoRoot>Protos\</ProtoRoot>
+    </None>
+    <None Update="ClientApp\src\services\RendererService.proto">
+      <ProtoRoot>Protos\</ProtoRoot>
+    </None>
+  </ItemGroup>
+  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+  </Target>
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build -- --configuration production" />
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>wwwroot\%(RecursiveDir)%(FileName)%(Extension)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+  <PropertyGroup>
+    <TypeScriptExperimentalDecorators>true</TypeScriptExperimentalDecorators>
+  </PropertyGroup>
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="BuildProto.bat" IgnoreExitCode="true" />
+  </Target>
+  <ItemGroup>
+    <Content Update="electron.manifest.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

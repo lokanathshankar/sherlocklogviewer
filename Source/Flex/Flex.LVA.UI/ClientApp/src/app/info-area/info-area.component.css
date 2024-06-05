@@ -1,0 +1,27 @@
+.paddedtext {
+  padding: 15px;
+}
+.panel {
+  align-items: center;
+  height: 100%;
+  overflow:hidden;
+}
+
+.box {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+  .box div {
+    width: 100%;
+    height: 100%;
+  }
+  .box p-tabView {
+    width: 100%;
+    height: 100%;
+  }
+  .box p-tabPanel {
+    width: 100%;
+    height: 500px;
+  }

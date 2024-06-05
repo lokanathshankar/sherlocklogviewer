@@ -1,0 +1,1 @@
+﻿electronize build /target win --icon="D:\Repos\Flex\Source\Flex\Flex.LVA.UI\wwwroot\icon.ico"

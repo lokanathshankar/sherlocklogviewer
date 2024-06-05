@@ -1,0 +1,9 @@
+<div class="flex flex-column gap-3">
+  <div class="p-fluid">
+    <div class="field">
+      <label for="username">User ID</label>
+      <input pInputText type="text" [(ngModel)]="enteredUserId" />
+    </div>
+    <p-button label="Enter" [disabled]="!enteredUserId" (click)="login()"></p-button>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+{
+  "executable": "Flex.LVA.UI",
+  "splashscreen": {
+    "imageFile": ""
+  },
+  "name": "Flex.LVA.UI",
+  "author": "sherlockviewer.in",
+  "singleInstance": false,
+  "environment": "Production",
+  "build": {
+    "appId": "com.Flex.LVA.UI.app",
+    "productName": "Sherlock Log Viewer",
+    "copyright": "Copyright © 2023",
+    "buildVersion": "1.2.0",
+    "compression": "maximum",
+    "directories": {
+      "output": "../../../bin/Desktop",
+      "buildResources": "wwwroot"
+    },
+    "extraResources": [
+      {
+        "from": "./bin",
+        "to": "bin",
+        "filter": [ "**/*" ]
+      }
+    ],
+    "files": [
+      {
+        "from": "./ElectronHostHook/node_modules",
+        "to": "ElectronHostHook/node_modules",
+        "filter": [ "**/*" ]
+      },
+      "**/*"
+    ],
+    "win": {
+      "icon": "../../../wwwroot/icon.ico"
+    }
+  }
+}

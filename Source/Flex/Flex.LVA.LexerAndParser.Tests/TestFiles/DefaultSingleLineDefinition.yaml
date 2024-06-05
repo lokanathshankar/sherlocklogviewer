@@ -1,0 +1,65 @@
+{
+  "Name": "SingleLineTemplate",
+  "HeaderLineCount": 0,
+  "LogFileType" : 1,
+  "Syntaxes": [
+    {
+      "Id": 1,
+      "BeginMarker": "",
+      "EndMarker": "newline",
+      "SyntaxType": 1,
+      "Elements": [
+        {
+          "Name": "ProcessName",
+          "EndSeparator": " ",
+          "Type": 1,
+          "ChildSyntaxId": null,
+          "ExtendedParser": null
+        },
+        {
+          "Name": "PID",
+          "EndSeparator": " ",
+          "Type": 2,
+          "ChildSyntaxId": null,
+          "ExtendedParser": null
+        },
+        {
+          "Name": "TID",
+          "EndSeparator": " ",
+          "Type": 2,
+          "ChildSyntaxId": null,
+          "ExtendedParser": null
+        },
+        {
+          "Name": "Time",
+          "EndSeparator": " ",
+          "Type": 4,
+          "ChildSyntaxId": null,
+          "ExtendedParser": null,
+          "DateTimeFormat": "HH:mm:ss,fff"
+        },
+        {
+          "Name": "Domain",
+          "EndSeparator": " ",
+          "Type": 1,
+          "ChildSyntaxId": null,
+          "ExtendedParser": null
+        },
+        {
+          "Name": "Function",
+          "EndSeparator": " - ",
+          "Type": 1,
+          "ChildSyntaxId": null,
+          "ExtendedParser": null
+        },
+        {
+          "Name": "Trace",
+          "EndSeparator": null,
+          "Type": 1,
+          "ChildSyntaxId": null,
+          "ExtendedParser": null
+        }
+      ]
+    }
+  ]
+}

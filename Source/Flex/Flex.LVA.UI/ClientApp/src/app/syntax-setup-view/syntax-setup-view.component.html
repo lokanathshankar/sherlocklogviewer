@@ -1,0 +1,88 @@
+<p-overlayPanel #helpsyntaxid>
+  <h4>Unique ID for this syntax</h4>
+</p-overlayPanel>
+<p-overlayPanel #helpbeginmarker>
+  <h4>A marker which every log entry beings with</h4>
+</p-overlayPanel>
+<p-overlayPanel #helpendmarker>
+  <h4>A marker which every log entry ends with</h4>
+</p-overlayPanel>
+<p-overlayPanel #helpparchild>
+  <h4>Specify if the syntax is parent of child, usually this is parent unless a nested parser is being setup.</h4>
+</p-overlayPanel>
+<p-overlayPanel #helplogelement>
+  <h4>Specifies every column of the log file, each column consist of name, end saperator, it's type, it's child syntax and formatter which is aplicable for DateTime types</h4>
+</p-overlayPanel>
+<div class="flex flex-column gap-3" style="width:1080px;height:700px">
+  <div class="flex flex-wrap gap-3  align-self-end">
+    <div class="flex align-items-center">
+      <p-radioButton value="1" [(ngModel)]="syntax.SyntaxType"></p-radioButton>
+      <label class="ml-2">Parent</label>
+    </div>
+    <div class="flex align-items-center">
+      <p-radioButton value="2" [(ngModel)]="syntax.SyntaxType"></p-radioButton>
+      <label class="ml-2">Child</label>
+    </div>
+    <p-button icon="pi pi-question" styleClass="p-button-rounded p-button-secondary" (click)="helpparchild.toggle($event)"></p-button>
+  </div>
+  <div class="p-inputgroup">
+    <p-inputNumber inputId="integeronly" [disabled]="true" placeholder="Syntax Id" [(ngModel)]="syntax.Id" />
+    <button type="button" pButton icon="pi pi-question" styleClass="p-button-primary" (click)="helpsyntaxid.toggle($event)"></button>
+  </div>
+  <div class="p-inputgroup">
+    <input placeholder="Trace element start marker" pInputText [(ngModel)]="syntax.BeginMarker" />
+    <button type="button" pButton icon="pi pi-question" styleClass="p-button-primary" (click)="helpbeginmarker.toggle($event)"></button>
+  </div>
+  <div class="p-inputgroup">
+    <input placeholder="Trace element end marker" pInputText [(ngModel)]="syntax.EndMarker" />
+    <button type="button" pButton icon="pi pi-question" styleClass="p-button-primary" (click)="helpendmarker.toggle($event)"></button>
+  </div>
+  <p-table [value]="elements" [scrollable]="true" scrollHeight="320px" class="align-items-center justify-content-center m-1 border-round expand" styleClass="p-datatable-sm">
+    <ng-template pTemplate="caption">
+      <div class="flex align-items-center justify-content-between">
+        Column/Log Element List
+        <div class="flex flex-row gap-3">
+          <p-button icon="pi pi-plus" styleClass="p-button-rounded p-button-success" (click)="onAddElement()"></p-button>
+          <p-button icon="pi pi-question" styleClass="p-button-rounded p-button-secondary" (click)="helplogelement.toggle($event)"></p-button>
+        </div>
+      </div>
+
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Column Name</th>
+        <th>End Separator</th>
+        <th>Log Element Type</th>
+        <th>Child Syntax Id</th>
+        <th>Formatter</th>
+        <th style="width: 5rem"></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-element>
+      <tr>
+        <td>
+          <input class="p-inputtext-sm" pInputText placeholder="No Entry" [(ngModel)]="element.logElement.Name" />
+        </td>
+        <td>
+          <input class="p-inputtext-sm" pInputText placeholder="No Entry" [(ngModel)]="element.logElement.EndSeparator" />
+        </td>
+        <td>
+          <p-dropdown appendTo="body" [options]="logElementTypes" [(ngModel)]="element.logElement.Type" (onChange)="onElementTypeChanged($event, element)" />
+        </td>
+        <td>
+          <p-inputNumber class="p-inputtext-sm" inputId="integeronly" placeholder="No Entry" [(ngModel)]="element.logElement.ChildSyntaxId" />
+        </td>
+        <td>
+          <input class="p-inputtext-sm" pInputText [(ngModel)]="element.logElement.DateTimeFormat" [disabled]="element.disableFormatter"/>
+        </td>
+        <td>
+          <p-button icon="pi pi-trash" styleClass="p-button-rounded p-button-text" (click)="onRemoveElement(element)"></p-button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <div class="flex flex-row flex-wrap align-self-end align-self-bottom">
+    <p-button class="align-self-start m-1" label="Confirm" styleClass="p-button-primary p-button-raised p-button-sm" icon="pi pi-check" iconpos="right" (onClick)="onConfirm()" />
+    <p-button class="align-self-start m-1" label="Cancel" styleClass="p-button-primary p-button-raised p-button-sm" icon="pi pi-times" iconpos="right" (onClick)="onCancel()"/>
+  </div>
+</div>

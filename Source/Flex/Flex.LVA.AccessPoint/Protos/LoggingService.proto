@@ -1,0 +1,22 @@
+﻿syntax = "proto3";
+import "CommonReturnTypes.proto";
+
+option csharp_namespace = "Flex.LVA.Communication";
+
+package Flex.LVA.Communication.v1;
+
+service LoggingService {
+  rpc Debug (LoggingRequest) returns(VoidMessage);
+  rpc Info (LoggingRequest) returns(VoidMessage);
+  rpc Error (LoggingRequest) returns(VoidMessage);
+  rpc Verbose (LoggingRequest) returns(VoidMessage);
+  rpc Warn (LoggingRequest) returns(VoidMessage);
+}
+
+message LoggingRequest {
+	string Function = 1;
+	string Domain = 2;
+	string TraceMessage = 3;
+	uint32 ThreadId = 4;
+	uint32 ProcessId = 5;
+}

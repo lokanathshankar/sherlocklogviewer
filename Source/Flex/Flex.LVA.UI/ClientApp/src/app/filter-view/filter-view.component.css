@@ -1,0 +1,20 @@
+
+.panel {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+  .panel > p {
+    margin: 0;
+  }
+
+host ::ng-deep .p-inputtext.p-inputtext-sm {
+  font-size: 1.875rem;
+  padding: .65625rem .65625rem
+}
+
+:host ::ng-deep .p-tabview .p-tabview-nav {
+  flex-direction: column;
+  margin-top: 1rem;
+}

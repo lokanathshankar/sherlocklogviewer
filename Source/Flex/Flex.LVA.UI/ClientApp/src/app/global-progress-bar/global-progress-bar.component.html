@@ -1,0 +1,6 @@
+<p-dialog [(visible)]="visible" [resizable]="true" [modal]="true" [closable]="false">
+  <div class="flex flex-column gap-3">
+    <h2 class="h2">{{ activeMessage }}</h2>
+    <p-progressBar [mode]="progressMode" [value]="progressValue"></p-progressBar>
+  </div>
+</p-dialog>

@@ -1,0 +1,10 @@
+<div class="panel">
+  <as-split direction="vertical" [gutterSize]="7" (dragEnd)="SetHeight(getHeight.offsetHeight)" #mySplitArea #getHeight2>
+    <as-split-area [size]="70" #getHeight1>
+      <app-table-view></app-table-view>
+    </as-split-area>
+    <as-split-area [size]="30" #getHeight>
+      <app-info-area></app-info-area>
+    </as-split-area>
+  </as-split>
+</div>

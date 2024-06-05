@@ -1,0 +1,39 @@
+﻿syntax = "proto3";
+import "CommonReturnTypes.proto";
+
+option csharp_namespace = "Flex.LVA.Communication";
+
+package Flex.LVA.Communication.v1;
+
+service EngineService {
+  rpc GetRawLogs (GetRawLogsRequest) returns(StringMessage);
+  rpc GetRawLog (GetRawLogRequest) returns(StringMessage);
+  rpc PrepareLogs (RegistrationData) returns(VoidMessage);
+  rpc AppendLogChunk (LogChunkRequest) returns(VoidMessage);
+  rpc PrepareResources (PrepareResourceRequest) returns(VoidMessage);
+}
+
+message GetRawLogsRequest
+{
+	RegistrationData RegistrationData = 1;
+	repeated int32 LogIds = 2;
+}
+
+message GetRawLogRequest
+{
+	RegistrationData RegistrationData = 1;
+	int32 LogId = 2;
+}
+
+
+message LogChunkRequest
+{
+	RegistrationData RegistrationData = 1;
+	bytes LogChunk = 2;
+}
+
+message PrepareResourceRequest
+{
+	RegistrationData RegistrationData = 1;
+	string LogDefinition = 2;
+}

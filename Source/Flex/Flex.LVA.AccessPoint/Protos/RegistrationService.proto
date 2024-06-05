@@ -1,0 +1,13 @@
+﻿syntax = "proto3";
+import "CommonReturnTypes.proto";
+
+option csharp_namespace = "Flex.LVA.Communication";
+
+package Flex.LVA.Communication.v1;
+
+service RegistrationService {
+  rpc StopServices (RegistrationData) returns(BoolMessage);
+  rpc StartServices (VoidMessage) returns(RegistrationData);
+  rpc ReadServiceVersion (VoidMessage)returns(StringMessage);
+  rpc OpenWebPage(StringMessage)returns(VoidMessage);
+}

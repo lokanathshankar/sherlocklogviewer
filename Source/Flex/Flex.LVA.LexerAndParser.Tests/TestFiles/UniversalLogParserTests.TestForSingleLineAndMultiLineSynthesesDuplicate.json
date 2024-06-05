@@ -1,0 +1,72 @@
+{
+  "1": [
+    {
+      "Value": true
+    },
+    {
+      "Value": 1
+    },
+    {
+      "Value": " Some single line trace.\r\n"
+    },
+    {
+      "Value": "125 "
+    },
+    {
+      "Value": "Proc1\r"
+    },
+    {
+      "Value": " Warning\r\n"
+    },
+    {
+      "Value": " 2023-03-10T12:38:40.175\u002B05:30\r\n"
+    },
+    {
+      "Value": " ProcessName.exe\r"
+    },
+    {
+      "Value": "135 "
+    },
+    {
+      "Value": "Proc4\r"
+    },
+    {
+      "Value": ""
+    }
+  ],
+  "2": [
+    {
+      "Value": true
+    },
+    {
+      "Value": 2
+    },
+    {
+      "Value": " MultiLineTrace,\r\nLine2,\r\nLine3\r\nLine4\r\n"
+    },
+    {
+      "Value": "127 "
+    },
+    {
+      "Value": "Proc3\r"
+    },
+    {
+      "Value": " Warning\r\n"
+    },
+    {
+      "Value": " 2023-03-10T12:39:40.187\u002B05:30\r\n"
+    },
+    {
+      "Value": " ProcessName2\r"
+    },
+    {
+      "Value": "157 "
+    },
+    {
+      "Value": "Proc7\r"
+    },
+    {
+      "Value": ""
+    }
+  ]
+}

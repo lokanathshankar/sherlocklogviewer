@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Platforms>AnyCPU;x64;x86;ARM64;ARM32</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Protos\CommonReturnTypes.proto" />
+    <None Remove="Protos\EngineService.proto" />
+    <None Remove="Protos\LoggingService.proto" />
+    <None Remove="Protos\RegistrationService.proto" />
+    <None Remove="Protos\RendererService.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos\CommonReturnTypes.proto" ProtoRoot="Protos\" />
+    <Protobuf Include="Protos\RendererService.proto" ProtoRoot="Protos\" />
+    <Protobuf Include="Protos\LoggingService.proto" ProtoRoot="Protos\" />
+    <Protobuf Include="Protos\EngineService.proto" ProtoRoot="Protos\" />
+    <Protobuf Include="Protos\RegistrationService.proto" ProtoRoot="Protos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.49.0" />
+    <PackageReference Include="Grpc.Core" Version="2.46.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Flex.LVA.LexerAndParser\Flex.LVA.Core.csproj" />
+    <ProjectReference Include="..\Flex.LVA.Logging\Flex.LVA.Logging.csproj" />
+    <ProjectReference Include="..\Flex.LVA.Shared\Flex.LVA.Shared.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>Flex.LVA.LexerAndParser.Tests</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="BuildProto.bat" />
+  </Target>
+</Project>

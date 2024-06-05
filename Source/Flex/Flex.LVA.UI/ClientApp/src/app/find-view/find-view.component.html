@@ -1,0 +1,15 @@
+<div class="flex flex-column gap-3">
+  <input class="flex align-items-center justify-content-center m-1 border-round" pInputText [(ngModel)]="searchText" />
+  <div class="flex flex-row gap-3 flex justify-content-center">
+    <div *ngFor="let aFilter of searchFilters" class="field-checkbox">
+      <p-radioButton [inputId]="aFilter" name="aFilter" [value]="aFilter" [(ngModel)]="selectedFilter"></p-radioButton>
+      <label [for]="aFilter" class="ml-2">{{ aFilter }}</label>
+    </div>
+  </div>
+  <div class="flex flex-row flex-wrap">
+    <p-button class="flex-grow-1 align-self-start justify-content-end m-1 border-round" styleClass="p-button-raised  p-button-sm" (click)="onFindPrevious()">Find Previous</p-button>
+    <p-button class="flex-grow-1 align-self-start justify-content-end m-1 border-round" styleClass="p-button-raised  p-button-sm" (click)="onFindNext()">Find Next</p-button>
+    <p-button class="flex-grow-1 align-self-start justify-content-end m-1 border-round" styleClass="p-button-raised  p-button-sm" (click)="onFindAll()">Find All</p-button>
+    <p-button class="flex-grow-1 align-self-start justify-content-end m-1 border-round" styleClass="p-button-raised  p-button-sm" (click)="onClearAll()">Clear All</p-button>
+  </div>
+</div>

@@ -1,0 +1,130 @@
+{
+  "1": [
+    {
+      "Value": true
+    },
+    {
+      "Value": 1
+    },
+    {
+      "Value": "TestPorc"
+    },
+    {
+      "Value": 124
+    },
+    {
+      "Value": 12
+    },
+    {
+      "Value": "22:04:55.3330000"
+    },
+    {
+      "Value": "Domain"
+    },
+    {
+      "Value": "Function()"
+    },
+    {
+      "Value": "Trace Goes here."
+    },
+    {
+      "Value": ""
+    }
+  ],
+  "2": [
+    {
+      "Value": true
+    },
+    {
+      "Value": 2
+    },
+    {
+      "Value": "TestPorc"
+    },
+    {
+      "Value": 156
+    },
+    {
+      "Value": 12
+    },
+    {
+      "Value": "22:04:57.3330000"
+    },
+    {
+      "Value": "Domain2"
+    },
+    {
+      "Value": "Function2()"
+    },
+    {
+      "Value": "Trace Goes here2."
+    },
+    {
+      "Value": ""
+    }
+  ],
+  "3": [
+    {
+      "Value": true
+    },
+    {
+      "Value": 3
+    },
+    {
+      "Value": "TestPorc"
+    },
+    {
+      "Value": 124
+    },
+    {
+      "Value": 12
+    },
+    {
+      "Value": "22:04:55.3330000"
+    },
+    {
+      "Value": "Domain"
+    },
+    {
+      "Value": "Function()"
+    },
+    {
+      "Value": "Trace Goes here."
+    },
+    {
+      "Value": "   Trace Continues to line 2\n and line 3\n"
+    }
+  ],
+  "4": [
+    {
+      "Value": true
+    },
+    {
+      "Value": 4
+    },
+    {
+      "Value": "TestPorc"
+    },
+    {
+      "Value": 124
+    },
+    {
+      "Value": 12
+    },
+    {
+      "Value": "22:04:55.3330000"
+    },
+    {
+      "Value": "Domain"
+    },
+    {
+      "Value": "Function()"
+    },
+    {
+      "Value": "Trace Goes here."
+    },
+    {
+      "Value": ""
+    }
+  ]
+}

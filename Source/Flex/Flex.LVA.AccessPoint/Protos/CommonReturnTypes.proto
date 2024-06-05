@@ -1,0 +1,27 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Flex.LVA.Communication";
+
+package Flex.LVA.Communication.v1;
+
+message VoidMessage {}
+
+message BoolMessage
+{
+	bool Value = 1;
+}
+
+message StringMessage
+{
+	string Value = 1;
+}
+
+message IntMessage
+{
+	int32 Value = 1;
+}
+
+message RegistrationData {
+	int64 Id = 1;
+	string RegistrationAddress = 2;
+}

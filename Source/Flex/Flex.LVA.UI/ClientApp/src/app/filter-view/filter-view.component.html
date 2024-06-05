@@ -1,0 +1,46 @@
+<div class="flex flex-column gap-3">
+  <div class="flex flex-column gap-3">
+    <div class="flex flex-row flex-wrap">
+      <p-dropdown appendTo="body" [options]="avaliableColumns" placeholder="Select a column" [(ngModel)]="currentColumn"></p-dropdown>
+      <p-dropdown appendTo="body" [options]="avaliableFilters" placeholder="Filter with" [(ngModel)]="filterWith"></p-dropdown>
+      <input class="flex align-items-center justify-content-center m-1 border-round p-inputtext-sm" placeholder="Filter what" pInputText [(ngModel)]="filterText" />
+      <p-button class="align-self-start m-1 border-round" styleClass="p-button-raised p-button-sm" (click)="onAddNewFilter()">Add Filter</p-button>
+      <p-button class="align-self-start  m-1 border-round" styleClass="p-button-raised p-button-sm" (click)="onResetFilters()">Clear All Filters</p-button>
+      <p-button class="align-self-start  m-1 border-round" styleClass="p-button-raised p-button-sm" (click)="onGroupFilters()">Group Filters</p-button>
+      <p-button class="align-self-start  m-1 border-round" styleClass="p-button-raised p-button-sm" (click)="onApplyFilters()">Apply Filters</p-button>
+      <p-button class="align-self-start  m-1 border-round" styleClass="p-button-raised p-button-sm" (click)="onDownloadFilters()">Download Filters</p-button>
+      <input type="file" accept=".json" (change)="onImportFilters($event)" style="display: none" id="importFiltersInput">
+      <label for="importFiltersInput" class="p-button align-self-start m-1 border-round p-button-raised p-button-sm">Import Filters</label>
+    </div>
+  </div>
+  <p-table [value]="columnFilters" class="align-items-center justify-content-center m-1 border-round expand" styleClass="p-datatable-sm">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Name</th>
+        <th>Operator</th>
+        <th>Against</th>
+        <th>Or</th>
+        <th style="width: 5rem"></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-columnFilter>
+      <tr [style]="{'background':getColor(columnFilter)}">
+        <td>
+          {{columnFilter.column}}
+        </td>
+        <td>
+          {{columnFilter.with}}
+        </td>
+        <td>
+          {{columnFilter.what}}
+        </td>
+        <td>
+          <input type="checkbox" [checked]="columnFilter.Or" (change)="onChecked((columnFilter), $event)" />
+        </td>
+        <td>
+          <p-button icon="pi pi-trash" styleClass="p-button-rounded p-button-text" (click)="onRemoveFilter(columnFilter)"></p-button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

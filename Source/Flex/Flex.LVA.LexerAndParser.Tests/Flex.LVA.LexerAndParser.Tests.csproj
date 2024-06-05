@@ -1,0 +1,74 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <IsPackable>false</IsPackable>
+    <Platforms>AnyCPU;ARM32;ARM64;x64;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="TestFiles\AxisLogDefinition.yaml" />
+    <None Remove="TestFiles\DefaultNestedLineDefinition.yaml" />
+    <None Remove="TestFiles\DefaultNestedLineDefinitionDuplicates.yaml" />
+    <None Remove="TestFiles\DefaultSingleLine.Log" />
+    <None Remove="TestFiles\DefaultSingleLineDefinition.yaml" />
+    <None Remove="TestFiles\DefaultSingleLine_Big.Log" />
+    <None Remove="TestFiles\EventLogs.evtx" />
+    <None Remove="TestFiles\UniversalLogParserTests.TestForSingleLineAndMultiLineSyntheses.json" />
+    <None Remove="TestFiles\UniversalLogParserTests.TestForSingleLineAndMultiLineSynthesesDuplicate.json" />
+    <None Remove="TestFiles\UniversalLogParserTests.TestLogSingleLine.json" />
+    <None Remove="TestFiles\UniversalLogParserTests.TestLogSingleLineTruncationEffectTestForMultiLine.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
+    <PackageReference Include="Moq" Version="4.18.4" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.2.10" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.2.10" />
+    <PackageReference Include="coverlet.collector" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Flex.LVA.LexerAndParser\Flex.LVA.Core.csproj" />
+    <ProjectReference Include="..\Flex.LVA.Shared\Flex.LVA.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="TestFiles\UniversalLogParserTests.TestForSingleLineAndMultiLineSynthesesDuplicate.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <AdditionalFiles Include="TestFiles\UniversalLogParserTests.TestForSingleLineAndMultiLineSyntheses.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <AdditionalFiles Include="TestFiles\UniversalLogParserTests.TestLogSingleLineTruncationEffectTestForMultiLine.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <AdditionalFiles Include="TestFiles\UniversalLogParserTests.TestLogSingleLine.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AdditionalFiles>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="TestFiles\DefaultNestedLineDefinitionDuplicates.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\DefaultNestedLineDefinition.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\DefaultSingleLine_Big.Log">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\DefaultSingleLine.Log">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\DefaultSingleLineDefinition.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\EventLogs.evtx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,23 @@
+
+.paddedtabcontent {
+  padding: 12px;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+  :host ::ng-deep .p-tabview {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    }
+    
+    :host ::ng-deep .p-tabview .p-tabview-nav {
+    flex-direction: column;
+    }
+
+
+

@@ -1,0 +1,22 @@
+
+<div class="box">
+  <p-tabView (onChange)="activeIndexChange($event)" [(activeIndex)]="activeIndex">
+    <p-tabPanel header="Raw Log" [selected]="true">
+      <div class="paddedtext" style="display:flex;" [style.height]="rawTextHeight">
+<textarea style="width:100vw;" readonly>{{SelectedLog}}</textarea>
+      </div>
+    </p-tabPanel>
+    <p-tabPanel header="Bookmarks">
+      <div class="box">
+        <div id="myBookmarkTable" class="panel">
+        </div>
+      </div>
+    </p-tabPanel>
+    <p-tabPanel header="Find Results">
+      <div class="box">
+        <div id="myFindResultsTable" class="panel">
+        </div>
+      </div>
+    </p-tabPanel>
+  </p-tabView>
+</div>

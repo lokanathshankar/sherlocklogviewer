@@ -1,0 +1,11 @@
+<div class="flex flex-column gap-3">
+
+  <div class="flex flex-row flex-wrap align-self-end align-self-bottom">
+    <p-button class="align-self-start m-1" label="Copy To Clipboard" styleClass="p-button-help p-button-raised p-button-sm" icon="pi pi-copy" iconpos="right" (click)="onCopyToClipBoard()" />
+    <p-button class="align-self-start m-1" label="Print" styleClass="p-button-success p-button-raised p-button-sm" icon="pi pi-print" iconpos="right" (click)="onPrintNote()" />
+    <p-button class="align-self-start m-1" label="Cancel" styleClass="p-button-secondary p-button-raised p-button-sm" icon="pi pi-times" iconpos="right" (click)="onCancel()" />
+  </div>
+  <p-editor [(ngModel)]="printData" placeholder="Preparing investigation data...">
+  </p-editor>
+
+</div>

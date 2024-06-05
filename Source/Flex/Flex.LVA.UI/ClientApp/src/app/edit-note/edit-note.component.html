@@ -1,0 +1,9 @@
+<div class="card flex flex-column gap-1" style="min-width: 1080px; max-width: 90vw;">
+  <input pInputText  placeholder="Shorthand/Friendly text" [(ngModel)]="currentNote.shortHandString" maxlength="50"/>
+  <p-editor [(ngModel)]="currentNote.contentFormatted" placeholder="Enter a note..." [style]="{ height: '150px' }" (onTextChange)="onNoteContentChanged($event)"></p-editor>
+  <p-editor [(ngModel)]="currentNote.logFormatted" placeholder="Loading logs..." [style]="{ height: '450px' }"></p-editor>
+  <div class="flex flex-row flex-wrap align-self-end align-self-bottom">
+    <p-button class="align-self-start m-1" label="Confirm" [disabled]="!currentNote.shortHandString" styleClass="p-button-success p-button-raised p-button-sm" icon="pi pi-check" iconpos="right" (onClick)="onConfirm()" />
+    <p-button class="align-self-start m-1" label="Cancel" styleClass="p-button-primary p-button-raised p-button-sm" icon="pi pi-times" iconpos="right" (onClick)="onCancel()" />
+  </div>
+</div>

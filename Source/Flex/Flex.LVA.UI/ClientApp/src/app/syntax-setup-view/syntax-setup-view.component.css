@@ -1,0 +1,4 @@
+::ng-deep .ui-datatable-scrollable-view .ui-datatable-scrollable-body {
+  min-height: 400px;
+  border: 1px solid #D5D5D5;
+}

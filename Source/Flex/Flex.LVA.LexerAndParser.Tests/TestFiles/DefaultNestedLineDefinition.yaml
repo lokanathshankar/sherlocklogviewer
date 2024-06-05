@@ -1,0 +1,182 @@
+{
+  "Name": "NestedDef",
+  "HeaderLineCount": 0,
+  "LogFileType" : 1,
+  "Syntaxes": [
+    {
+      "Id": 1,
+      "BeginMarker": "----------------------------------------",
+      "EndMarker": "----------------------------------------",
+      "SyntaxType": 1,
+      "Elements": [
+        {
+          "Name": null,
+          "EndSeparator": null,
+          "Type": 1,
+          "ChildSyntaxId": 2,
+          "ExtendedParser": null
+        },
+        {
+          "Name": null,
+          "EndSeparator": null,
+          "Type": 1,
+          "ChildSyntaxId": 3,
+          "ExtendedParser": null
+        },
+        {
+          "Name": null,
+          "EndSeparator": null,
+          "Type": 1,
+          "ChildSyntaxId": 4,
+          "ExtendedParser": null
+        },
+        {
+          "Name": null,
+          "EndSeparator": null,
+          "Type": 1,
+          "ChildSyntaxId": 5,
+          "ExtendedParser": null
+        },
+        {
+          "Name": null,
+          "EndSeparator": null,
+          "Type": 1,
+          "ChildSyntaxId": 6,
+          "ExtendedParser": null
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "BeginMarker": "Message:",
+      "EndMarker": "ID:",
+      "SyntaxType": 2,
+      "Elements": [
+        {
+          "Name": null,
+          "EndSeparator": ":",
+          "Type": 1,
+          "ChildSyntaxId": null,
+          "ExtendedParser": null
+        },
+        {
+          "Name": "Trace",
+          "EndSeparator": null,
+          "Type": 1,
+          "ChildSyntaxId": null,
+          "ExtendedParser": null
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "BeginMarker": "ID:",
+      "EndMarker": "Severity:",
+      "SyntaxType": 2,
+      "Elements": [
+        {
+          "Name": null,
+          "EndSeparator": null,
+          "Type": 1,
+          "ChildSyntaxId": 7,
+          "ExtendedParser": null
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "BeginMarker": "Severity:",
+      "EndMarker": "Timestamp:",
+      "SyntaxType": 2,
+      "Elements": [
+        {
+          "Name": null,
+          "EndSeparator": ":",
+          "Type": 0,
+          "ChildSyntaxId": null,
+          "ExtendedParser": null
+        },
+        {
+          "Name": "Level",
+          "EndSeparator": null,
+          "Type": 1,
+          "ChildSyntaxId": null,
+          "ExtendedParser": null
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "BeginMarker": "Timestamp:",
+      "EndMarker": "Process Name:",
+      "SyntaxType": 2,
+      "Elements": [
+        {
+          "Name": null,
+          "EndSeparator": ":",
+          "Type": 1,
+          "ChildSyntaxId": null,
+          "ExtendedParser": null
+        },
+        {
+          "Name": "Message",
+          "EndSeparator": null,
+          "Type": 1,
+          "ChildSyntaxId": null,
+          "ExtendedParser": null
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "BeginMarker": "Process Name:",
+      "EndMarker": "newline",
+      "SyntaxType": 2,
+      "Elements": [
+        {
+          "Name": null,
+          "EndSeparator": ":",
+          "Type": 1,
+          "ChildSyntaxId": null,
+          "ExtendedParser": null
+        },
+        {
+          "Name": "ProcessName",
+          "EndSeparator": null,
+          "Type": 1,
+          "ChildSyntaxId": null,
+          "ExtendedParser": null
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "BeginMarker": "RealId:",
+      "EndMarker": "newline",
+      "SyntaxType": 2,
+      "Elements": [
+        {
+          "Name": null,
+          "EndSeparator": ":",
+          "Type": 1,
+          "ChildSyntaxId": null,
+          "ExtendedParser": null
+        },
+        {
+          "Name": "RealId",
+          "EndSeparator": "RealValue:",
+          "Type": 1,
+          "ChildSyntaxId": null,
+          "ExtendedParser": null
+        },
+        {
+          "Name": "RealValue",
+          "EndSeparator": null,
+          "Type": 1,
+          "ChildSyntaxId": null,
+          "ExtendedParser": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+<div class="card">
+  <p-table [value]="logDefinitions" responsiveLayout="scroll" styleClass="p-datatable-sm">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Name</th>
+        <th style="width: 6rem"></th>
+        <th>Elements</th>
+        <th style="width: 12rem"></th>
+      </tr>
+    </ng-template>
+    <!--TODO : Need to add group header-->
+    <ng-template pTemplate="body" let-logDef>
+      <tr *ngFor="let logsyntax of logDef.Syntaxes">
+        <td>
+          {{logDef.Name}}
+        </td>
+        <td></td>
+        <td>
+          <li *ngFor="let value of logsyntax.Elements">
+            {{value.Name}} - {{getStringFromType(value.Type)}}
+          </li>
+        </td>
+        <td>
+          <p-button label="Load Parser" styleClass="p-button-info" (click)="onLoadParser(logDef)"></p-button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

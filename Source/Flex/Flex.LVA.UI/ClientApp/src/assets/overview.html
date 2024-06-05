@@ -1,0 +1,128 @@
+﻿<html>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sherlock Log Viewer</title>
+    <link href="./bootstrap.min.css" rel="stylesheet">
+    <script src="./bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+	
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .carousel {
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .carousel-inner img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+	    <script>
+        // Function to send the content height to the parent window
+        function sendHeightToParent() {
+            const height = document.body.scrollHeight;
+            window.parent.postMessage({ height }, '*');
+        }
+
+        // Listen for window resize events and send the height to the parent
+        window.addEventListener('resize', sendHeightToParent);
+
+        // Send the initial height to the parent when the iframe loads
+        window.addEventListener('load', sendHeightToParent);
+    </script>
+        <h1>Welcome to Sherlock Log Viewer</h1>
+
+        <p>
+            Hello there! Welcome to Sherlock Log Viewer, your go-to solution for analyzing logs. It effortlessly detects and parses your logs automatically, saving you time and effort. With Sherlock Log Viewer, you can seamlessly apply advanced filtering and access sophisticated reporting features with ease. The best thing is it's cross-platform, available for Windows, Linux, and Mac.
+        </p>
+
+        
+        <div class="col-md-12" align="center">
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+                <!-- Indicators/dots -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
+                </div>
+
+                <!-- The slideshow/carousel -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./customparser.png" alt="Custom Parser">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./parserconfig.png" alt="Parser Configuration">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./filter.png" alt="Filter">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./darktheme.png" alt="Dark Theme">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./find.png" alt="Find">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./printing.png" alt="Printing">
+                    </div>
+                </div>
+
+                <!-- Left and right controls/icons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
