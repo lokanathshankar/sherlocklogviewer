@@ -149,20 +149,21 @@ export class TopMenuComponent implements OnInit, OnDestroy {
         ]
       },
       {
-        label: 'Help',
+        label: 'About',
         icon: 'pi pi-fw pi-cog',
-        items: [
-          {
-            label: 'Documentation',
-            icon: 'pi pi-fw pi-info-circle',
-            command: () => this.onHelp(),
-          },
-          {
-            label: 'About',
-            icon: 'pi pi-fw pi-briefcase',
-            command: () => this.onAboutClicked(),
-          }
-        ]
+        command: () => this.onAboutClicked(),
+        //items: [
+        //  //{
+        //   // label: 'Documentation',
+        //    //icon: 'pi pi-fw pi-info-circle',
+        //   // command: () => this.onHelp(),
+        //  //},
+        //  {
+        //    label: 'About',
+        //    icon: 'pi pi-fw pi-briefcase',
+        //    command: () => this.onAboutClicked(),
+        //  }
+        //]
       }
       
     ];
@@ -174,23 +175,23 @@ export class TopMenuComponent implements OnInit, OnDestroy {
         command: () => this.myTestDataLoader.Load(),
       });
     }
-    this.myUpdateService.IsUpdateAvailable();
-    this.myTopMenuEvents.isUpdateAvailable.subscribe((versionNumber: string) => {
-      this.newVersionNo = versionNumber;
-      this.currentVersionNo = this.packageJsonObject.version;
-      if (this.currentVersionNo === this.newVersionNo) {
-        console.log("App version is latest")
-      }
-      else {
-        this.isUpdateAvailable = true;
-      }
-    });
+    //this.myUpdateService.IsUpdateAvailable();
+    //this.myTopMenuEvents.isUpdateAvailable.subscribe((versionNumber: string) => {
+    //  this.newVersionNo = versionNumber;
+    //  this.currentVersionNo = this.packageJsonObject.version;
+    //  if (this.currentVersionNo === this.newVersionNo) {
+    //    console.log("App version is latest")
+    //  }
+    //  else {
+    //    this.isUpdateAvailable = true;
+    //  }
+    //});
   }
 
-  private onHelp(): void {
-    // TODO
-    window.open("https://sherlocklogviewer.in/Docs.html", '_blank');
-  }
+  //private onHelp(): void {
+   // // TODO
+  //  window.open("https://github.com/lokanathshankar/sherlocklogviewer/blob/main/README.md", '_blank');
+  //}
 
   private onParserConfigClicked(): void {
     this.myDialogService.open(ParserSetupViewComponent, { header: 'Parser Configuration', closable: true, closeOnEscape: true });
@@ -224,7 +225,7 @@ export class TopMenuComponent implements OnInit, OnDestroy {
     })
   }
 
-  onUpdateAvailable(): void {
-    this.myUpdateService.OpenLocalBrowser();
-  }
+  //onUpdateAvailable(): void {
+  //  this.myUpdateService.OpenLocalBrowser();
+  //}
 }

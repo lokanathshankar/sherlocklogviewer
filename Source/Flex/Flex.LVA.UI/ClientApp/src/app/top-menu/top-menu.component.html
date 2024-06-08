@@ -2,9 +2,9 @@
   <p-menubar [model]="menuItems">
     <ng-template pTemplate="end">
       <div class="flex">
-        <div class="flex" style="margin-right: 12px; align-items: center; vertical-align: middle;">
+        <!--<div class="flex" style="margin-right: 12px; align-items: center; vertical-align: middle;">
           <button *ngIf="isUpdateAvailable" pButton type="button" label="Update Available" icon="pi pi-cloud-download" (click)="onUpdateAvailable()" class="p-button-raised p-button-sm"  [style]="{ 'height': '28px' }"></button>
-        </div>
+        </div>-->
         <div class="flex" style="margin-right: 12px; align-items: center; vertical-align: middle;">
           <p-toggleButton onIcon="pi pi-sun" offIcon="pi pi-moon" styleClass="p-button-rounded p-button-text" [style]="{ 'height': '28px', 'width':'28px' }" [(ngModel)]="darkModeOn" (onChange)="onThemeChange()"></p-toggleButton>
         </div>
