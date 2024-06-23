@@ -60,12 +60,3 @@ This workflow is used to load log files where the parser config is already creat
 4. Load the log file from the "Start" menu using the "Load Log File..." option. The selected file will be loaded as per the config from the above steps.
 
 **Remark:** Parser config seen in the User Workbox are user/session-specific, determined by the entry given by the user during the application start-up screen.
-
-## Change Logs
-
-| Version | Changes                                                                                  | Release Date |
-|---------|------------------------------------------------------------------------------------------|--------------|
-| 1.0.0   | Initial Release for Sherlock Log Viewer                                                  | 7/10/2023    |
-| 1.1.0   | Improvement for CSV file reading and minor improvements for log parsing                  | 17/10/2023   |
-| 1.1.1   | Bug Fixes                                                                                | 22/10/2023   |
-| 1.2.0   | Added Import and Export functionality to filters and Sherlock Log Viewer Auto Update app checker | 04/12/2023   |
